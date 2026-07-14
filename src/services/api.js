@@ -3,7 +3,7 @@
  */
 
 // NOTA: Si usas Vite, tu variable en Amplify o en tu archivo .env DEBE llamarse VITE_API_BASE_URL
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/sales';
 
 /**
  * Submit a sale to the backend.
@@ -13,7 +13,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
  */
 export async function submitSale(saleData) {
   try {
-    const response = await fetch(`${API_BASE_URL}/sales`, {
+    const response = await fetch(API_BASE_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(saleData),
