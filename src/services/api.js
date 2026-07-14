@@ -15,7 +15,7 @@ export async function submitSale(saleData) {
 
   // ── IMPLEMENTACIÓN REAL (Descomentada y lista para enviar a AWS) ──
   try {
-    const response = await fetch(API_BASE_URL, {
+    const response = await fetch('${API_BASE_URL}/sales', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(saleData),
