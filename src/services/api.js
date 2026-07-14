@@ -13,7 +13,7 @@
  * Unit cost and total cost are NEVER included in the payload.
  */
 
-const API_BASE_URL = '/api'; // ← Point this to your API Gateway URL
+const API_BASE_URL = import.meta.env.API_BASE_URL || '/api';
 
 /**
  * Submit a sale to the backend.
